@@ -80,6 +80,10 @@ public class OfflineModel implements ModelFacade{
         return this.username.concat(" has ").concat("12345 (dummy) credits.");
     }
 
+    public double getRemainingCredits(String responseBody){
+        return 1234;
+    }
+
     @Override
     public ObservableList<TakenLoan> getAccountLoans() {
         ObservableList<TakenLoan> dummy_loans = FXCollections.observableArrayList();
@@ -87,10 +91,17 @@ public class OfflineModel implements ModelFacade{
         return dummy_loans;
     }
 
+    public String payOffLoan(String loanID){
+        return "Paid off dummy loan";
+    }
+
 
     public ObservableList<MyShip> getAccountShips() {
         ObservableList<MyShip> dummy_ships = FXCollections.observableArrayList();
-        dummy_ships.add(new MyShip(null, "DUMMYCLASS", "dum-my-id", "BLACKHOLE","DUMMY MANUFACTURER", "DUM TYPE"));
+        List<Cargo> cargos = new ArrayList<>();
+        cargos.add(new Cargo("SOME GOOD", 2, 2));
+        cargos.add(new Cargo("MORE GOODS", 2, 2));
+        dummy_ships.add(new MyShip(cargos, "DUMMYCLASS", "dum-my-id", "BLACKHOLE","DUMMY MANUFACTURER", "DUM TYPE"));
 
         if(last_loaded_myships.size() == 0){
             last_loaded_myships.add(dummy_ships.get(0));

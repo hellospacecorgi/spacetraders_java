@@ -176,7 +176,7 @@ public class FlightsController {
 
             return;
         }
-        message.setText("Error creating flight plan");
+        message.setText("Error creating flight plan - check if enough fuel?");
 
     }
 

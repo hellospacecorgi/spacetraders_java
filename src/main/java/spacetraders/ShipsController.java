@@ -39,10 +39,11 @@ public class ShipsController {
     @FXML
     ChoiceBox location_selected;
 
+    //for ship fuel
     @FXML
-    ChoiceBox ships_id;
+    ChoiceBox id_selected;
 
-    String id_selected;
+    String ship_id;
 
     @FXML
     TableView ships_table;
@@ -112,11 +113,11 @@ public class ShipsController {
             }
         });
 
-        ships_id.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+        id_selected.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
-                id_selected = String.valueOf(t1);
-                message.setText("Selected ship with id ".concat(id_selected).concat("for fuel purchase."));
+                ship_id = String.valueOf(t1);
+                message.setText("Selected ship with id ".concat(ship_id).concat("for fuel purchase."));
             }
         });
     }
@@ -177,29 +178,30 @@ public class ShipsController {
         Thread.sleep(2000);
         model.getAccountShips();
         List<MyShip> ships = model.getMyShips();
-        ships_id.getItems().clear();
+        id_selected.getItems().clear();
         for(int i = 0 ; i < ships.size(); i ++){
-            ships_id.getItems().add(ships.get(i));
+            id_selected.getItems().add(ships.get(i).getId());
         }
     }
 
     public void onLoadMyShips(){
         model.getAccountShips();
         List<MyShip> myships = model.getMyShips();
+        id_selected.getItems().clear();
         if(myships.size() > 0){
             for(int i = 0 ; i < myships.size(); i++){
-                ships_id.getItems().add(myships.get(i).getId());
+                id_selected.getItems().add(myships.get(i).getId());
             }
         }
         message.setText("Loaded my ships in drop down list");
     }
 
     public void onPurchaseShipFuel(){
-        if(id_selected.equals("")){
+        if(ship_id.equals("")){
             message.setText("No ship id selected - cannot purchase fuel");
         }
         //default 20 units
-        String result = model.purchaseShipFuel(id_selected, 20);
+        String result = model.purchaseShipFuel(ship_id, 20);
         if(result != null){
             message.setText(result);
             return;

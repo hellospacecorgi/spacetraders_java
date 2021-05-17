@@ -53,6 +53,19 @@ public class JSONHandler {
         return null;
     }
 
+    public double parseAccountCredits(String responseBody){
+        //Parse our JSON data (org.json in build.gradle)
+        try{
+            JSONObject account = new JSONObject(responseBody).getJSONObject("user");
+            double credits = account.getDouble("credits");
+            String username = account.getString("username");
+            return credits;
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     public ObservableList<TakenLoan> parseViewAccountLoans(String responseBody){
         ObservableList<TakenLoan> loans_list = FXCollections.observableArrayList();
         try{
@@ -190,7 +203,7 @@ public class JSONHandler {
         try{
             System.out.println(responseBody);
             double credits = new JSONObject(responseBody).getDouble("credits");
-            JSONObject ship = new JSONObject(responseBody).getJSONObject("loan");
+            JSONObject ship = new JSONObject(responseBody).getJSONObject("ship");
             String ship_class = ship.getString("class");
             String ship_id = ship.getString("id");
             String response = "Purchased ".concat(ship_class).concat(" with id ").concat(ship_id).concat("\n").concat("Remaining ".concat(String.valueOf(credits)).concat(" credits"));
@@ -354,6 +367,20 @@ public class JSONHandler {
             FlightPlan plan = new FlightPlan(arrival,depart,dest,dist,cons,remain,planID, shipID,termin, time);
             plans.add(plan);
             return plans;
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String parsePayOffLoan(String responseBody){
+        try{
+            JSONObject account = new JSONObject(responseBody).getJSONObject("user");
+            JSONArray loans = account.getJSONArray("loans");
+            Double credits = account.getDouble("credits");
+            String response = "Paid off a loan. Remaining ".concat(String.valueOf(credits)).concat(" credits")
+                    .concat("\nRemaining ").concat(String.valueOf(loans.length())).concat(" loans");
+            return response;
         } catch (JSONException e){
             e.printStackTrace();
         }

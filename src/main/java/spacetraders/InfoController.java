@@ -1,11 +1,10 @@
 package spacetraders;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import spacetraders.model.Loan;
 import spacetraders.model.ModelFacade;
@@ -19,12 +18,23 @@ public class InfoController {
     TextArea message;
 
     @FXML
+    Label message1;
+    @FXML
+    Label message2;
+
+    @FXML
     Label mode_label;
     @FXML
     TableView loans_table;
 
     @FXML
     TableView ships_table;
+
+    @FXML
+    ChoiceBox loan_selected;
+
+    String loan_id = "";
+
 
     ModelFacade model;
 
@@ -39,14 +49,33 @@ public class InfoController {
         } else {
             mode_label.setText("Running in offline mode. Presenting dummy values.");
         }
+
+        loan_selected.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observableValue, Object o, Object t1) {
+                loan_id = String.valueOf(t1);
+                if(loan_id != null){
+                    message.setText("Selected loan with id ".concat(loan_id).concat("for pay off."));
+                }
+
+            }
+        });
     }
 
     public void onLoadInfo() {
         String responseBody = model.viewAccount();
         message.setText(model.getAccountCredit(responseBody));
+        message1.setText("Remaining credits: ");
+        message2.setText(String.valueOf(model.getRemainingCredits(responseBody)));
 
         //Upper table for loans
         ObservableList<TakenLoan> loans = model.getAccountLoans();
+
+        //populate loan_selected list on the right
+        loan_selected.getItems().clear();
+        for(int i = 0 ; i < loans.size() ; i++){
+            loan_selected.getItems().add(loans.get(i).getId());
+        }
 
         TableColumn<TakenLoan, String> due  = new TableColumn<TakenLoan, String>("Due Date");
         due.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
@@ -98,6 +127,17 @@ public class InfoController {
 
         ships_table.setItems(ships);
         ships_table.getColumns().addAll(shipClass, location, manufacturer, shipType, maxCargo, space, speed, xPos, yPos);
+
+    }
+
+    public void onPayOffLoan(){
+        if(loan_id.equals("")){
+            message.setText("Cannot pay off loan - No loan ID selected");
+            return;
+        }
+
+        String response = model.payOffLoan(loan_id);
+        message.setText(response);
 
     }
 

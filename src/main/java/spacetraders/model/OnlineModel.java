@@ -120,7 +120,9 @@ public class OnlineModel implements ModelFacade{
     public String getAccountCredit(String responseBody){
        return handler.parseViewAccountCredit(responseBody);
     }
-
+    public double getRemainingCredits(String responseBody){
+        return handler.parseAccountCredits(responseBody);
+    }
     public ObservableList<TakenLoan> getAccountLoans(){
         try{
             HttpRequest request = HttpRequest.newBuilder()
@@ -439,6 +441,27 @@ public class OnlineModel implements ModelFacade{
             ObservableList<FlightPlan> plans = handler.parseViewFlightPlan(response.body());
 
             return plans;
+        } catch(IOException | InterruptedException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String payOffLoan(String loanID){
+        try{
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .PUT(HttpRequest.BodyPublishers.noBody())
+                    .setHeader("Authorization", "Bearer ".concat(token))
+                    .header("accept", "application/json")
+                    .uri(URI.create("https://api.spacetraders.io/my/loans/".concat(loanID)))
+                    .build();
+
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            if(response.statusCode() < 400){
+                return handler.parsePayOffLoan(response.body());
+            }
+            return handler.parseErrorMessage(response.body());
         } catch(IOException | InterruptedException e){
             e.printStackTrace();
         }

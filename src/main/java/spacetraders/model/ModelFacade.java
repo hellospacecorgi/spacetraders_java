@@ -23,12 +23,14 @@ public interface ModelFacade {
     //View account credit, loans and ships
     public String viewAccount();
     public String getAccountCredit(String responseBody);
+    public double getRemainingCredits(String responseBody);
     public ObservableList<TakenLoan> getAccountLoans();
     public ObservableList<MyShip> getAccountShips();
 
     //View loans
     public ObservableList<Loan> viewAvailableLoans();
     public String takeOutLoan(String type);
+    public String payOffLoan(String loanID);
 
     //View ships, purchase ship fuel
     public ObservableList<Ship> viewShipsToPurchase();
