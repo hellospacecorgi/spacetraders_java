@@ -34,22 +34,22 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" stylesheets="@Login.css" text="Purchase Ships">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onPurchaseShips" stylesheets="@Login.css" text="Purchase Ships">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" stylesheets="@Login.css" text="Marketplace">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onMarketplace" stylesheets="@Login.css" text="Marketplace">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" stylesheets="@Login.css" text="Flight Plan">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onTrade" stylesheets="@Login.css" text="Sell Trade Goods">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" stylesheets="@Login.css" text="Back to Main">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onFlightplan" stylesheets="@Login.css" text="Flight Plan">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>

@@ -45,7 +45,10 @@ public class LoginController {
         });
 
         message.setText(model.getServerStatus());
-
+        model.saveAccount("randomcorgi", "61cbb008-c490-4595-a644-b39ff609347d");
+        model.saveAccount("username", "token");
+        saved_accounts.getItems().add("randomcorgi");
+        saved_accounts.getItems().add("username");
     }
 
     public void onLogin() throws IOException {
@@ -53,6 +56,11 @@ public class LoginController {
             model.setInfo(username.getText(), token.getText());
             System.out.println(model.getInfo());
             ViewSwitcher.switchTo(View.MAIN);
+            return;
+        }
+        if(!model.isOnline() && model.authenticate(username.getText(), token.getText())){
+            message.setText("Offline mode only accepts the default account as valid login");
+            return;
         }
 
         message.setText("Login failed, check if entered correctly?");
@@ -73,6 +81,7 @@ public class LoginController {
     public void onSaveDetails(){
         if(model.saveAccount(username.getText(), token.getText())){
             saved_accounts.getItems().add(username.getText());
+            message.setText("Credentials saved but does not guarantee login!!");
         } else {
             message.setText("Cannot create new save - duplicate username");
         }

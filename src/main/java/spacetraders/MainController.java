@@ -46,4 +46,20 @@ public class MainController {
     public void onLoans() throws IOException {
         ViewSwitcher.switchTo(View.LOANS);
     }
+
+    public void onPurchaseShips() throws IOException {
+        ViewSwitcher.switchTo(View.SHIPS);
+    }
+
+    public void onMarketplace() throws IOException {
+        ViewSwitcher.switchTo(View.MARKET);
+    }
+
+    public void onTrade() throws IOException {
+        ViewSwitcher.switchTo(View.TRADE);
+    }
+
+    public void onFlightplan() throws IOException {
+        ViewSwitcher.switchTo(View.FLIGHT);
+    }
 }

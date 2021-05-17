@@ -23,14 +23,29 @@ public interface ModelFacade {
     //View account credit, loans and ships
     public String viewAccount();
     public String getAccountCredit(String responseBody);
-    public ObservableList<Loan> getAccountLoans(String responseBody);
-    public ObservableList<Ship> getAccountShips(String responseBody);
+    public ObservableList<TakenLoan> getAccountLoans();
+    public ObservableList<MyShip> getAccountShips();
 
-    //View available loans
+    //View loans
     public ObservableList<Loan> viewAvailableLoans();
     public String takeOutLoan(String type);
 
+    //View ships, purchase ship fuel
     public ObservableList<Ship> viewShipsToPurchase();
+    public String purchaseShip(String type, String location);
+    public List<MyShip> getMyShips();
+    public String purchaseShipFuel(String shipId, int quantity);
+
+
+    //View marketplace and sell goods
+    public ObservableList<Good> viewMarketplace(String symbol);
+    public String placePurchaseOrder(String shipId, String goodSymbol, Integer quantity);
+    public String placeSellOrder(String shipId, String goodSymbol, Integer quantity);
+
+    //Flight - view nearby locations, create and view flight plans
+    public ObservableList<NearbyLocation> viewNearbyLocations(String system);
+    public FlightPlan createFlightPlan(String shipId, String destination);
+    public ObservableList<FlightPlan> viewFlightPlan(String planID);
 
 
 

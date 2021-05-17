@@ -6,9 +6,16 @@ root {
 }
 
 .label {
-    -fx-font-size: 12px;
+    -fx-font-size: 13px;
     -fx-font-weight: bold;
     -fx-text-fill: #63cdda;
+}
+
+.textarea {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #63cdda;
+
 }
 
 #welcome-text {

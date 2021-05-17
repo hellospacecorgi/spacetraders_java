@@ -77,22 +77,29 @@ public class LoansController {
     public void onViewLoans(){
         //display loans on table
         ObservableList<Loan> loans = model.viewAvailableLoans();
-
+        System.out.println("View loans model complete");
         amount = new TableColumn<Loan, Double>("Amount");
         amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
-
+        System.out.println("Set amount column");
         collateral = new TableColumn<Loan, Boolean>("Collateral Required");
         collateral.setCellValueFactory(new PropertyValueFactory<>("collateral"));
 
         rate = new TableColumn<Loan, Double>("Rate");
         rate.setCellValueFactory(new PropertyValueFactory<>("rate"));
 
+        termdays = new TableColumn<Loan, Integer>("Rate");
+        termdays.setCellValueFactory(new PropertyValueFactory<>("termDays"));
+
         type = new TableColumn<Loan, String>("Type");
-        type.setCellValueFactory(new PropertyValueFactory<>("Type"));
+        type.setCellValueFactory(new PropertyValueFactory<>("loanType"));
+
+        loans_table.getColumns().clear();
+        loans_table.setItems(loans);
+        loans_table.getColumns().addAll(amount, collateral, rate, termdays, type);
 
         //populate choice box
         for(int i = 0 ; i < loans.size(); i++){
-            loan_selected.getItems().add(loans.get(i).getType());
+            loan_selected.getItems().add(loans.get(i).getLoanType());
         }
 
     }
@@ -103,8 +110,7 @@ public class LoansController {
         } else {
             //send request to take out loan
             String result = model.takeOutLoan(loan_type);
-
-
+            message.setText(result);
         }
 
 

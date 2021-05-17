@@ -42,6 +42,14 @@ public class ViewSwitcher {
                     viewLoader.setController(new LoansController(model));
                 } else if(path.equals("info.fxml")){
                     viewLoader.setController(new InfoController(model));
+                } else if(path.equals("ships.fxml")){
+                    viewLoader.setController(new ShipsController(model));
+                } else if(path.equals("marketplace.fxml")){
+                    viewLoader.setController(new MarketController(model));
+                } else if(path.equals("trade.fxml")){
+                    viewLoader.setController(new TradesController(model));
+                } else if(path.equals("flight.fxml")){
+                    viewLoader.setController(new FlightsController(model));
                 }
                 root = viewLoader.load();
 

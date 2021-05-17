@@ -5,34 +5,34 @@ public class Loan {
     private boolean collateral;
     private double rate;
     private int termDays;
-    private String type;
+    private String loanType;
 
     public Loan(double amt, boolean col, double rate, int days, String type){
         this.amount = amt;
         this.collateral = col;
         this.rate = rate;
         this.termDays = days;
-        this.type = type;
+        this.loanType = type;
     }
 
-    public double getAmount() {
-        return amount;
+    public Double getAmount() {
+        return Double.valueOf(amount);
     }
 
-    public boolean isCollateral() {
-        return collateral;
+    public Boolean isCollateral() {
+        return Boolean.valueOf(collateral);
     }
 
-    public double getRate() {
-        return rate;
+    public Double getRate() {
+        return Double.valueOf(rate);
     }
 
-    public int getTermDays() {
-        return termDays;
+    public Integer getTermDays() {
+        return Integer.valueOf(termDays);
     }
 
-    public String getType() {
-        return type;
+    public String getLoanType() {
+        return loanType;
     }
 
 }

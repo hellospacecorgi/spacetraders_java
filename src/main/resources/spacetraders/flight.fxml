@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="root" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <right>
+      <VBox alignment="TOP_RIGHT" prefHeight="325.0" prefWidth="166.0" style="-fx-background-color: 212121212121;" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="logout-button" alignment="CENTER" mnemonicParsing="false" onAction="#onLogout" stylesheets="@Login.css" text="Log Out">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <ImageView fitHeight="90.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@rocket-launch.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onViewInfo" stylesheets="@Login.css" text="View Info">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onToMain" stylesheets="@Login.css" text="Back to Main">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLoadMyShips" prefHeight="50.0" prefWidth="104.0" text="Load My Ships" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Label alignment="CENTER" prefHeight="33.0" prefWidth="273.0" text="Select Ship ID" />
+            <ChoiceBox fx:id="ship_selected1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="135.0" styleClass="root" stylesheets="@Login.css" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLoadCargoTable" prefHeight="50.0" prefWidth="104.0" text="Load Ship Cargos" textAlignment="CENTER" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox fx:id="bottomconsole" prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: #0c2461#0c2461;" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="message" prefHeight="85.0" prefWidth="562.0" style="-fx-background-color: #0c2461#0c2461 #0c2461#0c2461;" styleClass="textarea" stylesheets="@Login.css" text="asdf" HBox.hgrow="ALWAYS" />
+            <Region prefHeight="85.0" prefWidth="19.0" />
+            <ImageView fitHeight="69.0" fitWidth="76.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+               <image>
+                  <Image url="@astronaut.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="2.0" right="15.0" top="8.0" />
+               </HBox.margin>
+            </ImageView>
+            <TextArea fx:id="message1" prefHeight="85.0" prefWidth="562.0" style="-fx-background-color: #0c2461#0c2461 #0c2461#0c2461;" styleClass="textarea" stylesheets="@Login.css" text="asdf" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <SplitPane dividerPositions="0.6870229007633588" orientation="VERTICAL" prefHeight="304.0" prefWidth="434.0" VBox.vgrow="ALWAYS">
+              <items>
+                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #706fd3#706fd3 #706fd3#706fd3;">
+                     <children>
+                        <VBox prefHeight="166.0" prefWidth="341.0" style="-fx-background-color: #706fd3#706fd3 #706fd3#706fd3;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TableView id="tableview" fx:id="flights_table" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #706fd3#706fd3 #706fd3#706fd3 #706fd3#706fd3 #706fd3#706fd3;" styleClass="root" stylesheets="@Login.css" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="127.0" prefWidth="117.0" style="-fx-background-color: #706fd3#706fd3 #706fd3#706fd3;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="33.0" prefWidth="273.0" text="Select System" />
+                              <ChoiceBox fx:id="location_list" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="135.0" styleClass="root" stylesheets="@Login.css" />
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onViewNearbyPlanets" prefHeight="50.0" prefWidth="104.0" text="View Nearby Planets" textAlignment="CENTER" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Region prefHeight="67.0" prefWidth="117.0" VBox.vgrow="ALWAYS" />
+                              <Label alignment="CENTER" prefHeight="33.0" prefWidth="273.0" text="Select Plan ID" />
+                              <ChoiceBox fx:id="plan_selected" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="135.0" styleClass="root" stylesheets="@Login.css" />
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onViewFlightPlan" prefHeight="50.0" prefWidth="104.0" text="View Flight Plan" textAlignment="CENTER" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Region prefHeight="120.0" prefWidth="0.0" style="-fx-background-color: #2c2c54#2c2c54 #2c2c54#2c2c54;" HBox.hgrow="ALWAYS" />
+                        <VBox prefHeight="120.0" prefWidth="340.0" style="-fx-background-color: #2c2c54#2c2c54;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label prefHeight="37.0" prefWidth="274.0" text="Select Ship ID" />
+                              <ChoiceBox fx:id="ship_selected" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="304.0" styleClass="root" stylesheets="@Login.css" VBox.vgrow="ALWAYS" />
+                              <HBox prefHeight="72.0" prefWidth="440.0">
+                                 <children>
+                                    <VBox prefHeight="81.0" prefWidth="321.0">
+                                       <children>
+                                          <Label prefHeight="33.0" prefWidth="273.0" text="Select Destination" />
+                                          <ChoiceBox fx:id="dest_selected" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="306.0" styleClass="root" stylesheets="@Login.css">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </VBox.margin>
+                                          </ChoiceBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="120.0" prefWidth="117.0" style="-fx-background-color: #2c2c54#2c2c54;">
+                           <children>
+                              <Region prefHeight="35.0" prefWidth="117.0" VBox.vgrow="ALWAYS" />
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onCreateFlightPlan" prefHeight="50.0" prefWidth="104.0" text="Create Flight Plan" textAlignment="CENTER" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+              </items>
+            </SplitPane>
+         </children></VBox>
+   </center>
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="mode_label" prefHeight="15.0" prefWidth="360.0" text="Mode">
+               <HBox.margin>
+                  <Insets left="10.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

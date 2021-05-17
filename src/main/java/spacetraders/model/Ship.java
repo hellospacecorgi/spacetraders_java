@@ -4,56 +4,56 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Ship {
-    private String ship_class;
+    private String shipClass;
     private String manufacturer;
     private int maxCargo;
     private int plating;
-    private Map<String, Integer> purchaseLocations = new HashMap<>();
-    private int speed;
-    private String type;
+    Map<String, Integer> locations;
+    private double speed;
+    private String shipType;
     private int weapons;
 
-    public Ship(String ship_class, String manufacturer, int maxCargo, int plating, Map<String, Integer> locations, int speed, String type, int weapons){
-        this.ship_class = ship_class;
+    public Ship(String ship_class, String manufacturer, int maxCargo, int plating, Map<String,Integer> locations, double speed, String type, int weapons){
+        this.shipClass = ship_class;
         this.manufacturer = manufacturer;
         this.maxCargo = maxCargo;
         this.plating = plating;
-        this.purchaseLocations = locations;
+        this.locations = locations;
         this.speed = speed;
-        this.type = type;
+        this.shipType = type;
         this.weapons = weapons;
     }
 
     public String getShipClass() {
-        return ship_class;
+        return shipClass;
     }
 
     public String getManufacturer() {
         return manufacturer;
     }
 
-    public int getMaxCargo() {
-        return maxCargo;
+    public Integer getMaxCargo() {
+        return Integer.valueOf(maxCargo);
     }
 
-    public int getPlating() {
-        return plating;
+    public Integer getPlating() {
+        return Integer.valueOf(plating);
     }
 
-    public Map<String, Integer> getPurchaseLocations() {
-        return purchaseLocations;
+    public Map<String,Integer> getLocations() {
+        return locations;
     }
 
-    public int getSpeed() {
-        return speed;
+    public Double getSpeed() {
+        return Double.valueOf(speed);
     }
 
-    public String getType() {
-        return type;
+    public String getShipType() {
+        return shipType;
     }
 
-    public int getWeapons() {
-        return weapons;
+    public Integer getWeapons() {
+        return Integer.valueOf(weapons);
     }
 
 
