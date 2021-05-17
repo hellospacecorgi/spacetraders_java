@@ -67,8 +67,6 @@ Image credits
  
  <a href="https://www.flaticon.com/authors/nhor-phai" title="Nhor Phai">Nhor Phai</a>
  
- <a href="https://www.freepik.com" title="Freepik">Freepik</a>
- 
  <a href="" title="smalllikeart">smalllikeart</a> 
 
 All creators from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
