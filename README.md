@@ -21,34 +21,34 @@ The following is grouping of where to perform required actions once logged in:
 - Displays server status (active or not) on bottom console message panel
 
 ### View Info
-- <Load Info> to load user loans and ships
+- `Load Info` to load user loans and ships
 - Displays remaining credits in bottom panel
-- <Pay off loan> to pay off loan after selecting loanID (<Load Info> required beforehand)
+- `Pay off loan` to pay off loan after selecting loanID (`Load Info` required beforehand)
 
 ### Loans
-- <View Loans> to list available loans and details
-- <Take Out Loan> to obtain loan (require viewing loans and selecting type beforehand)
+- `View Loans` to list available loans and details
+- `Take Out Loan` to obtain loan (require viewing loans and selecting type beforehand)
 
 ### Purchase Ships
-- <View Ships> to list available ships and details
-- <Purchase Ship> require viewing ships and selecting type, purchase location beforehand
-- <Purchase Ship Fuel> require <Load My Ships> and then selecting ShipID 
+- `View Ships` to list available ships and details
+- `Purchase Ship` require viewing ships and selecting type, purchase location beforehand
+- `Purchase Ship Fuel` require `Load My Ships` and then selecting ShipID 
  
 ### Marketplace
 - Response and error messages in bottom left panel, instructions in bottom right
-- <View Marketplace> require selecting location, response message in bottom left panel.
-- <Place Order> require viewing marketplace, <Load My Ships> and selecting ShipID, Good and Quantity
+- `View Marketplace` require selecting location, response message in bottom left panel.
+- `Place Order` require viewing marketplace, `Load My Ships` and selecting ShipID, Good and Quantity
 
 ### Sell Trade Goods
-- <Place Sell Order> to sell goods to marketplace (Require <Load My Ships> for loading Ship ID)
-- <Load Cargos> to see what goods are available for selling on that ship (after selecting Ship ID)
+- `Place Sell Order` to sell goods to marketplace (Require `Load My Ships` for loading Ship ID)
+- `Load Cargos` to see what goods are available for selling on that ship (after selecting Ship ID)
 - Select ShipID , Good and Quantity before placing Sell Order
 - Response and error messages in bottom left panel, instructions in bottom right
 
 ### Flight Plan
-- <View Nearby Planets> to list nearby locations and details (require selecting system)
-- <View Nearby Planets>, <Load My Ships> required (load ShipID and destination list) before <Create Flight Plan>
-- <View Flight Plan> after selecting PlanID
+- `View Nearby Planets` to list nearby locations and details (require selecting system)
+- `View Nearby Planets`, `Load My Ships` required (load ShipID and destination list) before `Create Flight Plan`
+- `View Flight Plan` after selecting PlanID
 - Response and error messages in bottom left panel, instructions in bottom right
 
 
