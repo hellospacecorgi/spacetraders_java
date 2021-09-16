@@ -2,7 +2,7 @@
 
 <img src="https://user-images.githubusercontent.com/24476996/133601795-142665c3-f0c1-4d72-a5d3-b0de1370792e.png" width=400> <img src="https://user-images.githubusercontent.com/24476996/133602038-71ea4552-c674-4654-aa80-f0a166533bb3.png" width=400> <img src="https://user-images.githubusercontent.com/24476996/133602237-72d1c24f-0dbc-44e2-9d1d-452588c8cea1.png" width=400> <img src="https://user-images.githubusercontent.com/24476996/133602460-24435360-eb6e-4ff0-b894-6eaa857147cf.png" width=400> <img src="https://user-images.githubusercontent.com/24476996/133604221-9a3c5475-3d1c-467c-a912-7fcbfae3ea40.png" width=400> <img src="https://user-images.githubusercontent.com/24476996/133604270-7003f4f7-2551-468c-ade1-4d4d357be873.png" width=400>
 
-Note: I KNOW the font color against the white table/console background is an eye-sore to look at, I just couldn't figure out where in the CSS/scene builder setting that I messed up and couldn't make the background the same as what is shown in the menu page cri ;___;
+Note: I KNOW the font color against the white table/console background is an eye-sore to look at, I just couldn't figure out where in the CSS/scene builder setting that I messed up and couldn't make the background the same as what is shown in the menu page :(
 
 ## Login account for offline version
 - Offline version can allow saving of credentials but does not guarantee successful login.
