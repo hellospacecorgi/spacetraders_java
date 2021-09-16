@@ -1,12 +1,15 @@
-# SCD2_2021_T3 Task 3 - SpaceTraders API
-
-Note to marker: late submission on 17th May ~7pm
+# 👾 SpaceTraders API Java GUI Application 👾
 
 ## Login account for offline version
 - Offline version can allow saving of credentials but does not guarantee successful login.
 - Only allows the account "username" "token" to be logged in (can be selected from list)
 - Manual saving required by clicking "save details" button to add to list.
 - Sign up will generate default password "token"
+
+## Run application using Gradle via CLI
+`gradle run --args=online` for online version doing GET/POST to API 
+
+or `gradle run --args=offline` for offline version with dummy response data
 
 ## Credentials, Tokens
 - Signup will display generated token in token text field
