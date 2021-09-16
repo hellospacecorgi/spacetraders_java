@@ -59,20 +59,9 @@ The following is grouping of where to perform required actions once logged in:
 
 ---
 
-Image credits
 <div>Icons made by 
  
- <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> 
- 
- <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> 
- 
- <a href="https://www.freepik.com" title="Freepik">Freepik</a> 
- 
- <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> 
- 
- <a href="https://www.flaticon.com/authors/nhor-phai" title="Nhor Phai">Nhor Phai</a>
- 
- <a href="" title="smalllikeart">smalllikeart</a> 
+ <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> , <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> , <a href="https://www.freepik.com" title="Freepik">Freepik</a> , <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> , <a href="https://www.flaticon.com/authors/nhor-phai" title="Nhor Phai">Nhor Phai</a> , <a href="" title="smalllikeart">smalllikeart</a> 
 
 All creators from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
  
